@@ -25,7 +25,7 @@ RUN apk --no-cache upgrade \
     && gpg --verify /tmp/s6-overlay.tar.gz.sig /tmp/s6-overlay.tar.gz \
     && tar xfz /tmp/s6-overlay.tar.gz -C / \
     && echo "Download and compile rclone" \
-    && go get -u -v github.com/rclone/rclone \
+    && go get -u -v github.com/rclone/rclone/tree/v1.50.2 \
     && cp /go/bin/rclone /usr/sbin/ \
     && rm -rf /go || true \
     && apk del alpine-sdk go git gnupg \
